@@ -1,0 +1,27 @@
+Import the boto3 library
+
+Define a function named filesearch that takes two parameters: bucket_name (string) and search_substring (string).
+    Initialize the S3 client using boto3.
+    Create an empty list to store matching file keys.
+    Try the following:
+        List all objects in the specified S3 bucket using list_objects_v2 method.
+        Iterate through each object in the bucket:
+            Extract the file key from the object.
+            Check if the file is a .txt file by verifying its extension.
+            If it's a .txt file:
+                Try the following:
+                  -  Read the file content using the get_object method.
+                  -  Decode the file content from bytes to string using utf-8 encoding.
+                  -  Check if the search_substring exists in the file content.
+                  -  If the search_substring is found:
+                  -      Append the file key to the matching_files list.
+                Handle any exceptions that occur during file reading.
+    Handle any exceptions that occur during listing objects in the bucket.
+    Return the list of matching file keys.
+
+If the script is executed directly (not imported as a module):
+    Set the bucket_name and search_substring variables with actual values.
+    Call the filesearch function with the specified bucket_name and search_substring.
+    If matching files are found:
+        Print each matching file key.
+    Otherwise, print "No matching files found."

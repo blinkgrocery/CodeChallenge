@@ -1,0 +1,79 @@
+## Infrastructure in Code
+
+The process of controlling and provisioning infrastructure using code instead of manual labour is known as infrastructure as code or IaC. Instead of manually configuring networks, servers, and other components, you specify them with code. This code can be reviewed, automated, and versioned.
+
+
+Why Would You Desire It?
+
+ - Infrastructure as a Service (IaC) ensures the consistency of your infrastructure across development, staging, and production environments.
+ – Infrastructure can be reliably rebuilt and deployed again.
+ - Processes related to setup, scaling, and management can be automated withIaC. 
+ - It reduces human errors and speeds up deployments.
+ - Teams can collaborate on infrastructure code using Git or other version control systems.
+ - Changes are tracked, verified, and documented.
+
+Additional options:
+
+- The manual configuration method is a conventional technique wherein administrators manually configure infrastructure. Human error and inaccuracies frequently occur with this procedure.
+- Configuration management tools: - More declarative than IaC, you can define the kind of infrastructure you need with tools like Puppet, Chef, or Ansible, although human processes are still necessary.
+- Configuring the containers: In short, these technologies manage applications running within an operational environment within containers.
+
+
+## Observability
+In the realm of microservices, observability is essential to understanding system behaviour and performance. 
+
+But what exactly should we be on the lookout for, and how may the issues be resolved?
+
+What are we hoping to see?
+ - Service Interactions: Measure the microservice interactions' latency and error rate.
+ - Performance and Latency: Track reaction times within and between services.
+ - Failures and Errors: Assess requests submitted to different services and identify the underlying causes.
+
+
+What kinds of challenges am I aware of in a distributed environment?
+ - Complexity: Several languages, services, and dependencies.
+ - Service Communication: The smooth sharing of data between services.
+ - Data Volume: Countless logs and metrics.
+ - Distributed Errors: identifying problems across several services.
+
+
+How can we resolve them? 
+ - One way to find bottlenecks is to trace scattered requests.
+ - Analyse performance and service health metrics and health checks.
+ - Gather logs in one place for examination.
+
+
+## Security
+
+Identity and Access Management (IAM) permits must be reviewed and checked in order to maintain the security of an environment. Ensure users and services have the least amount of privilege by auditing IAM roles and permissions and eliminating any that aren't needed. In order to gain access to the AWS Management Console, it is mandatory to utilise multi-factor authentication (MFA). This will improve security for IAM users.
+
+Security procedures also include periodically changing the access keys for IAM users and services and ensuring key rotation using IAM policies.
+Stricter security group policies, subnet traffic management with network ACLs, limiting access to necessary IP ranges and ports, and enabling VPC are all important aspects of network security.
+
+
+1.Examine Permissions in Identity and Access Management (IAM):
+ - Audit IAM permissions and roles on a regular basis.
+ - For users and services, apply least privilege access.
+ - Eliminate permissions that are not needed or are too lenient.
+
+2.Multi-factor authentication:
+ - Use MFA to gain access to the AWS Management Console.
+ - Require MFA in order to improve security for IAM users.
+ - Prevent unwanted access even in the event that login credentials are stolen.
+
+3.Rotation of Access Key:
+ - Rotate IAM users' and services' access keys on a regular basis.
+ - Use IAM policies to enforce key rotation.
+
+4.Network Security: ACLs and Security Groups: - Examine and strengthen security group guidelines.
+ - Control traffic at the subnet level by using network ACLs.
+ - Limit access to the IP ranges and ports that are required.
+
+5.Flow Logs for VPCs:
+ - Turn on VPC flow logs so that network traffic metadata can be recorded.
+ - Keep an eye out for any unauthorised access attempts or unusual activities.
+
+6.Encryption: 
+ - Using server-side encryption techniques, provide encryption for data that is at rest.
+ - Enable SSL/TLS for secure service-to-service communication to ensure encryption while in transit.
+ - Data encryption best practices: Just keep private information out of shared storage, public repositories, plaintext, and the public cloud (unless it's encrypted).
